@@ -13,7 +13,7 @@ function runAndSchedule(fn, interval) {
 
 function startScheduler() {
   // Busqueda de reservados
-  runAndSchedule(() => {
+  setInterval(() => {
     searchReserveds(reservedUrls)
       .then(() => console.log("Búsqueda ejecutada correctamente."))
       .catch((error) => console.error("Error al ejecutar la búsqueda:", error));
