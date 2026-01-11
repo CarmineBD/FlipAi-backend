@@ -1,0 +1,19 @@
+node_modules/
+dist/
+build/
+coverage/
+.env
+.env.*
+.DS_Store
+*.log
+
+# Vite
+.vite/
+
+# Next.js (si aplica)
+.next/
+out/
+
+# Misc
+.idea/
+.vscode/

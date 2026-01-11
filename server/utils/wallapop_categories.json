@@ -1,0 +1,1938 @@
+[
+  {
+    "name": "Coches",
+    "id": 100,
+    "subcategories": []
+  },
+  {
+    "name": "Motos",
+    "id": 14000,
+    "subcategories": []
+  },
+  {
+    "name": "Motor y Accesorios",
+    "id": 12800,
+    "subcategories": [
+      {
+        "name": "GPS y electrónica",
+        "id": 10164,
+        "subcategories": []
+      },
+      {
+        "name": "Herramientas",
+        "id": 10165,
+        "subcategories": []
+      },
+      {
+        "name": "Recambios de coches y furgonetas",
+        "id": 10167,
+        "subcategories": [
+          {
+            "name": "Accesorios",
+            "id": 10328
+          },
+          {
+            "name": "Aceites, lubricantes y líquidos",
+            "id": 10329
+          },
+          {
+            "name": "Carrocerías",
+            "id": 10330
+          },
+          {
+            "name": "Faros y luces indicadoras",
+            "id": 10331
+          },
+          {
+            "name": "Llantas",
+            "id": 10332
+          },
+          {
+            "name": "Motor y piezas de motor",
+            "id": 10333
+          },
+          {
+            "name": "Neumáticos",
+            "id": 10334
+          },
+          {
+            "name": "Seguridad",
+            "id": 10335
+          },
+          {
+            "name": "Suspensión y dirección",
+            "id": 10336
+          },
+          {
+            "name": "Transmisión",
+            "id": 10337
+          },
+          {
+            "name": "Tuning",
+            "id": 10338
+          }
+        ]
+      },
+      {
+        "name": "Recambios de motos y cuatriclicos",
+        "id": 10168,
+        "subcategories": [
+          {
+            "name": "Aceites, lubricantes y líquidos",
+            "id": 10339
+          },
+          {
+            "name": "Faros y luces indicadoras",
+            "id": 10340
+          },
+          {
+            "name": "Motor y piezas de motor",
+            "id": 10439
+          },
+          {
+            "name": "Neumáticos",
+            "id": 10440
+          },
+          {
+            "name": "Vestimenta y protección",
+            "id": 10341
+          }
+        ]
+      },
+      {
+        "name": "Otros",
+        "id": 10166,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Moda y Accesorios",
+    "id": 12465,
+    "subcategories": [
+      {
+        "name": "Mujer",
+        "id": 11002,
+        "subcategories": [
+          {
+            "name": "Calzado",
+            "id": 11021
+          },
+          {
+            "name": "Ropa",
+            "id": 11004
+          }
+        ]
+      },
+      {
+        "name": "Hombre",
+        "id": 11003,
+        "subcategories": [
+          {
+            "name": "Calzado",
+            "id": 11044
+          },
+          {
+            "name": "Ropa",
+            "id": 11031
+          }
+        ]
+      },
+      {
+        "name": "Accesorios",
+        "id": 10436,
+        "subcategories": [
+          {
+            "name": "Accesorios para el cabello",
+            "id": 9645
+          },
+          {
+            "name": "Bolsos y mochilas",
+            "id": 10152
+          },
+          {
+            "name": "Bufandas y chales",
+            "id": 10153
+          },
+          {
+            "name": "Cinturones",
+            "id": 9550
+          },
+          {
+            "name": "Corbatas y pañuelos",
+            "id": 9584
+          },
+          {
+            "name": "Gafas de sol",
+            "id": 9567
+          },
+          {
+            "name": "Guantes",
+            "id": 9610
+          },
+          {
+            "name": "Paraguas",
+            "id": 9635
+          },
+          {
+            "name": "Relojes",
+            "id": 9562
+          },
+          {
+            "name": "Sombreros y gorras",
+            "id": 10162
+          },
+          {
+            "name": "Otros accesorios",
+            "id": 9607
+          }
+        ]
+      },
+      {
+        "name": "Joyería",
+        "id": 10156,
+        "subcategories": [
+          {
+            "name": "Anillos",
+            "id": 9534
+          },
+          {
+            "name": "Broches",
+            "id": 9579
+          },
+          {
+            "name": "Cadenas",
+            "id": 9581
+          },
+          {
+            "name": "Colgantes",
+            "id": 9539
+          },
+          {
+            "name": "Collares",
+            "id": 9572
+          },
+          {
+            "name": "Conjuntos de joyas",
+            "id": 9637
+          },
+          {
+            "name": "Cuentas",
+            "id": 9636
+          },
+          {
+            "name": "Gemelos",
+            "id": 9654
+          },
+          {
+            "name": "Joyeros",
+            "id": 9644
+          },
+          {
+            "name": "Pendientes",
+            "id": 9571
+          },
+          {
+            "name": "Piercings",
+            "id": 9651
+          },
+          {
+            "name": "Pulseras",
+            "id": 9570
+          },
+          {
+            "name": "Tobilleras",
+            "id": 9638
+          },
+          {
+            "name": "Otras joyas",
+            "id": 9639
+          }
+        ]
+      },
+      {
+        "name": "Belleza",
+        "id": 10437,
+        "subcategories": [
+          {
+            "name": "Colonia",
+            "id": 9617
+          },
+          {
+            "name": "Cuidado personal",
+            "id": 9662
+          },
+          {
+            "name": "Maquillaje",
+            "id": 9590
+          },
+          {
+            "name": "Perfume",
+            "id": 9603
+          },
+          {
+            "name": "Utensilios y accesorios",
+            "id": 9660
+          },
+          {
+            "name": "Otros productos de belleza",
+            "id": 9674
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Inmobiliaria",
+    "id": 200,
+    "subcategories": []
+  },
+  {
+    "name": "TV, Audio y Foto",
+    "id": 12545,
+    "subcategories": [
+      {
+        "name": "",
+        "id": 10198,
+        "subcategories": [
+          {
+            "name": "Auriculares",
+            "id": 10395
+          },
+          {
+            "name": "Cascos",
+            "id": 10396
+          }
+        ]
+      },
+      {
+        "name": "Cámaras de vigilancia",
+        "id": 10199,
+        "subcategories": []
+      },
+      {
+        "name": "Cámaras y fotografía",
+        "id": 10200,
+        "subcategories": [
+          {
+            "name": "Cámaras fotográficas",
+            "id": 10397
+          },
+          {
+            "name": "Flashes y accesorios",
+            "id": 10398
+          },
+          {
+            "name": "Fotografía vintage",
+            "id": 10399
+          },
+          {
+            "name": "Iluminación fotográfica",
+            "id": 10400
+          },
+          {
+            "name": "Objetivos y filtros",
+            "id": 10401
+          },
+          {
+            "name": "Recambios y herramientas",
+            "id": 10402
+          },
+          {
+            "name": "Trípodes y soportes",
+            "id": 10403
+          }
+        ]
+      },
+      {
+        "name": "Drones",
+        "id": 10201,
+        "subcategories": []
+      },
+      {
+        "name": "Pilas y cargadores",
+        "id": 10203,
+        "subcategories": [
+          {
+            "name": "Baterías multiuso",
+            "id": 10422
+          },
+          {
+            "name": "Cargadores",
+            "id": 10404
+          }
+        ]
+      },
+      {
+        "name": "Proyectores y accesorios",
+        "id": 10204,
+        "subcategories": [
+          {
+            "name": "Accesorios",
+            "id": 10405
+          },
+          {
+            "name": "Proyectores",
+            "id": 10406
+          }
+        ]
+      },
+      {
+        "name": "Reproductores",
+        "id": 10205,
+        "subcategories": [
+          {
+            "name": "Accesorios",
+            "id": 10407
+          },
+          {
+            "name": "Reproductores",
+            "id": 10408
+          }
+        ]
+      },
+      {
+        "name": "Televisores y accesorios",
+        "id": 10206,
+        "subcategories": [
+          {
+            "name": "Accesorios",
+            "id": 10409
+          },
+          {
+            "name": "Antenas",
+            "id": 10410
+          },
+          {
+            "name": "Cables",
+            "id": 10411
+          },
+          {
+            "name": "Home cinema",
+            "id": 10412
+          },
+          {
+            "name": "Mandos",
+            "id": 10413
+          },
+          {
+            "name": "Televisores",
+            "id": 10414
+          },
+          {
+            "name": "Televisores vintage",
+            "id": 10415
+          }
+        ]
+      },
+      {
+        "name": "Vídeo y accesorios",
+        "id": 10207,
+        "subcategories": [
+          {
+            "name": "Accesorios",
+            "id": 10416
+          },
+          {
+            "name": "Cámaras de vídeo",
+            "id": 10417
+          }
+        ]
+      },
+      {
+        "name": "Otros",
+        "id": 10202,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Móviles y Telefonía",
+    "id": 16000,
+    "subcategories": [
+      {
+        "name": "Accesorios",
+        "id": 9375,
+        "subcategories": [
+          {
+            "name": "Auriculares",
+            "id": 10426
+          },
+          {
+            "name": "Cargadores",
+            "id": 10427
+          },
+          {
+            "name": "Fundas",
+            "id": 10428
+          }
+        ]
+      },
+      {
+        "name": "Cables",
+        "id": 10170,
+        "subcategories": []
+      },
+      {
+        "name": "Piezas y recambios",
+        "id": 9388,
+        "subcategories": [
+          {
+            "name": "Baterías",
+            "id": 10423
+          },
+          {
+            "name": "Cámaras",
+            "id": 10424
+          },
+          {
+            "name": "Pantallas",
+            "id": 10425
+          }
+        ]
+      },
+      {
+        "name": "Smartwatches",
+        "id": 9487,
+        "subcategories": []
+      },
+      {
+        "name": "Tablets",
+        "id": 9374,
+        "subcategories": []
+      },
+      {
+        "name": "Teléfonos antiguos",
+        "id": 10175,
+        "subcategories": []
+      },
+      {
+        "name": "Teléfonos móviles",
+        "id": 9447,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 9370,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Informática y Electrónica",
+    "id": 15000,
+    "subcategories": [
+      {
+        "name": "Cables",
+        "id": 10130,
+        "subcategories": []
+      },
+      {
+        "name": "Cargadores y baterías",
+        "id": 10131,
+        "subcategories": [
+          {
+            "name": "Baterías",
+            "id": 10304
+          },
+          {
+            "name": "Cargadores",
+            "id": 10305
+          }
+        ]
+      },
+      {
+        "name": "Impresoras y accesorios",
+        "id": 10132,
+        "subcategories": [
+          {
+            "name": "Cartuchos",
+            "id": 10306
+          },
+          {
+            "name": "Impresoras",
+            "id": 10307
+          }
+        ]
+      },
+      {
+        "name": "Monitores",
+        "id": 10133,
+        "subcategories": []
+      },
+      {
+        "name": "Ordenadores y accesorios",
+        "id": 10134,
+        "subcategories": [
+          {
+            "name": "Componentes y recambios",
+            "id": 10308
+          },
+          {
+            "name": "Ordenadores",
+            "id": 10309
+          },
+          {
+            "name": "Ordenadores portátiles",
+            "id": 10310
+          },
+          {
+            "name": "Ratones",
+            "id": 10311
+          },
+          {
+            "name": "Teclados",
+            "id": 10312
+          }
+        ]
+      },
+      {
+        "name": "Realidad virtual y aumentada",
+        "id": 10136,
+        "subcategories": []
+      },
+      {
+        "name": "Software",
+        "id": 10137,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 10135,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Deporte y ocio",
+    "id": 12579,
+    "subcategories": [
+      {
+        "name": "Baloncesto",
+        "id": 10094,
+        "subcategories": []
+      },
+      {
+        "name": "Balonmano",
+        "id": 10095,
+        "subcategories": []
+      },
+      {
+        "name": "Estáticas y elípticas",
+        "id": 10096,
+        "subcategories": []
+      },
+      {
+        "name": "Fitness, running y yoga",
+        "id": 10097,
+        "subcategories": []
+      },
+      {
+        "name": "Fútbol",
+        "id": 10098,
+        "subcategories": []
+      },
+      {
+        "name": "Golf",
+        "id": 10099,
+        "subcategories": []
+      },
+      {
+        "name": "Juegos recreativos y de mesa",
+        "id": 10100,
+        "subcategories": []
+      },
+      {
+        "name": "Manualidades",
+        "id": 10101,
+        "subcategories": []
+      },
+      {
+        "name": "Montaña y esquí",
+        "id": 10102,
+        "subcategories": []
+      },
+      {
+        "name": "Natación y accesorios piscina",
+        "id": 10103,
+        "subcategories": []
+      },
+      {
+        "name": "Otros deportes",
+        "id": 10105,
+        "subcategories": []
+      },
+      {
+        "name": "Patinetes y patinaje",
+        "id": 10106,
+        "subcategories": []
+      },
+      {
+        "name": "Rugby",
+        "id": 10107,
+        "subcategories": []
+      },
+      {
+        "name": "Tenis y pádel",
+        "id": 10108,
+        "subcategories": []
+      },
+      {
+        "name": "Vóley",
+        "id": 10109,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 10104,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Bicicletas",
+    "id": 17000,
+    "subcategories": [
+      {
+        "name": "Accesorios para bicicletas",
+        "id": 10055,
+        "subcategories": [
+          {
+            "name": "Bombas e infladores",
+            "id": 10208
+          },
+          {
+            "name": "Electrónica para bicicletas",
+            "id": 10209
+          },
+          {
+            "name": "Luces",
+            "id": 10210
+          },
+          {
+            "name": "Portabicicletas",
+            "id": 10211
+          },
+          {
+            "name": "Rodillos",
+            "id": 10212
+          }
+        ]
+      },
+      {
+        "name": "Bicicletas y triciclos",
+        "id": 10056,
+        "subcategories": [
+          {
+            "name": "Bicicletas Infantiles",
+            "id": 10216
+          },
+          {
+            "name": "Bicicletas ciudad",
+            "id": 10213
+          },
+          {
+            "name": "Bicicletas de carretera",
+            "id": 10438
+          },
+          {
+            "name": "Bicicletas eléctricas",
+            "id": 10215
+          },
+          {
+            "name": "Bicicletas plegables",
+            "id": 10217
+          },
+          {
+            "name": "Fixies",
+            "id": 10218
+          },
+          {
+            "name": "MTB",
+            "id": 10214
+          },
+          {
+            "name": "Monociclos",
+            "id": 10219
+          },
+          {
+            "name": "Triciclos",
+            "id": 10220
+          }
+        ]
+      },
+      {
+        "name": "Piezas y recambios de bici",
+        "id": 10058,
+        "subcategories": [
+          {
+            "name": "Cuadros",
+            "id": 10221
+          },
+          {
+            "name": "Herramientas",
+            "id": 10223
+          },
+          {
+            "name": "Neumáticos y cámaras",
+            "id": 10222
+          },
+          {
+            "name": "Piezas",
+            "id": 10224
+          },
+          {
+            "name": "Recambios",
+            "id": 10225
+          },
+          {
+            "name": "Ruedas",
+            "id": 10226
+          },
+          {
+            "name": "Sillín",
+            "id": 10227
+          }
+        ]
+      },
+      {
+        "name": "Protección y vestimenta",
+        "id": 10059,
+        "subcategories": [
+          {
+            "name": "Alforjas",
+            "id": 10230
+          },
+          {
+            "name": "Cascos",
+            "id": 10228
+          },
+          {
+            "name": "Gafas ciclismo y de sol",
+            "id": 10229
+          },
+          {
+            "name": "Ropa ciclismo",
+            "id": 10231
+          },
+          {
+            "name": "Zapatillas y cubrezapatillas",
+            "id": 10232
+          }
+        ]
+      },
+      {
+        "name": "Otros",
+        "id": 10057,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Consolas y Videojuegos",
+    "id": 12900,
+    "subcategories": [
+      {
+        "name": "Accesorios de consolas",
+        "id": 10087,
+        "subcategories": []
+      },
+      {
+        "name": "Consolas",
+        "id": 10088,
+        "subcategories": []
+      },
+      {
+        "name": "Manuales y guías",
+        "id": 10089,
+        "subcategories": []
+      },
+      {
+        "name": "Merchandising de videojuegos",
+        "id": 10090,
+        "subcategories": []
+      },
+      {
+        "name": "Recambios de consolas",
+        "id": 10092,
+        "subcategories": []
+      },
+      {
+        "name": "Videojuegos",
+        "id": 10093,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 10091,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Hogar y Jardín",
+    "id": 12467,
+    "subcategories": [
+      {
+        "name": "Almacenaje",
+        "id": 10127,
+        "subcategories": [
+          {
+            "name": "Armarios",
+            "id": 10289
+          },
+          {
+            "name": "Baúles",
+            "id": 10290
+          },
+          {
+            "name": "Cestas y contenedores para la colada",
+            "id": 10291
+          },
+          {
+            "name": "Estanterías",
+            "id": 10292
+          }
+        ]
+      },
+      {
+        "name": "Artículos para mascotas",
+        "id": 10118,
+        "subcategories": [
+          {
+            "name": "Accesorios de paseo",
+            "id": 10262
+          },
+          {
+            "name": "Camas",
+            "id": 10257
+          },
+          {
+            "name": "Corrales",
+            "id": 10258
+          },
+          {
+            "name": "Higiene",
+            "id": 10259
+          },
+          {
+            "name": "Jaulas",
+            "id": 10260
+          },
+          {
+            "name": "Juguetes",
+            "id": 10261
+          }
+        ]
+      },
+      {
+        "name": "Baño",
+        "id": 10119,
+        "subcategories": [
+          {
+            "name": "Juegos de baño",
+            "id": 10263
+          },
+          {
+            "name": "Muebles baño y espejos",
+            "id": 10264
+          },
+          {
+            "name": "Radiadores de baño",
+            "id": 10265
+          },
+          {
+            "name": "Toallas de baño y alfombras",
+            "id": 10419
+          }
+        ]
+      },
+      {
+        "name": "Cocina, comedor y bar",
+        "id": 10120,
+        "subcategories": [
+          {
+            "name": "Cuberterías",
+            "id": 10420
+          },
+          {
+            "name": "Utensilios",
+            "id": 10266
+          },
+          {
+            "name": "Vajillas",
+            "id": 10267
+          }
+        ]
+      },
+      {
+        "name": "Colchones y ropa de cama",
+        "id": 10121,
+        "subcategories": [
+          {
+            "name": "Almohadas y cojines",
+            "id": 10268
+          },
+          {
+            "name": "Colchones",
+            "id": 10269
+          },
+          {
+            "name": "Ropa de cama",
+            "id": 10270
+          }
+        ]
+      },
+      {
+        "name": "Decoración",
+        "id": 10122,
+        "subcategories": [
+          {
+            "name": "Adornos y decoración",
+            "id": 10271
+          },
+          {
+            "name": "Alfombras",
+            "id": 10272
+          },
+          {
+            "name": "Cortinas y estores",
+            "id": 10273
+          },
+          {
+            "name": "Obras de arte",
+            "id": 10274
+          }
+        ]
+      },
+      {
+        "name": "Iluminación interior",
+        "id": 10123,
+        "subcategories": [
+          {
+            "name": "Apliques",
+            "id": 10275
+          },
+          {
+            "name": "Lámparas de mesa",
+            "id": 10276
+          },
+          {
+            "name": "Lámparas de pie",
+            "id": 10277
+          },
+          {
+            "name": "Lámparas de techo",
+            "id": 10278
+          },
+          {
+            "name": "Otros",
+            "id": 10279
+          }
+        ]
+      },
+      {
+        "name": "Jardín y exteriores",
+        "id": 10124,
+        "subcategories": [
+          {
+            "name": "Barbacoas",
+            "id": 10280
+          },
+          {
+            "name": "Iluminación exterior",
+            "id": 10281
+          },
+          {
+            "name": "Jardinería y huertos",
+            "id": 10282
+          },
+          {
+            "name": "Mobiliario exterior",
+            "id": 10283
+          },
+          {
+            "name": "Piscina, sauna y spa",
+            "id": 10284
+          }
+        ]
+      },
+      {
+        "name": "Mobiliario para la casa",
+        "id": 10125,
+        "subcategories": [
+          {
+            "name": "Antigüedades",
+            "id": 10285
+          },
+          {
+            "name": "Habitaciones infantiles",
+            "id": 10286
+          },
+          {
+            "name": "Muebles de dormitorio",
+            "id": 10287
+          },
+          {
+            "name": "Muebles oficina",
+            "id": 10288
+          },
+          {
+            "name": "Muebles áreas comunes",
+            "id": 10421
+          }
+        ]
+      },
+      {
+        "name": "Otros",
+        "id": 10126,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Electrodomésticos",
+    "id": 13100,
+    "subcategories": [
+      {
+        "name": "Climatización",
+        "id": 10110,
+        "subcategories": []
+      },
+      {
+        "name": "Electrodomésticos de cocina",
+        "id": 10111,
+        "subcategories": []
+      },
+      {
+        "name": "Lavandería y plancha",
+        "id": 10112,
+        "subcategories": []
+      },
+      {
+        "name": "Pequeños electrodomésticos",
+        "id": 10113,
+        "subcategories": []
+      },
+      {
+        "name": "Piezas y recambios",
+        "id": 10114,
+        "subcategories": []
+      },
+      {
+        "name": "Vitrocerámica",
+        "id": 10115,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 10441,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Cine, Libros y Música",
+    "id": 12463,
+    "subcategories": [
+      {
+        "name": "CDs y Vinilos",
+        "id": 10060,
+        "subcategories": [
+          {
+            "name": "CDs Música",
+            "id": 10234
+          },
+          {
+            "name": "CDs idiomas",
+            "id": 10233
+          },
+          {
+            "name": "Discos de vinilo",
+            "id": 10235
+          }
+        ]
+      },
+      {
+        "name": "Cómics y novelas gráficas",
+        "id": 10061,
+        "subcategories": []
+      },
+      {
+        "name": "Equipo profesional de sonido",
+        "id": 10062,
+        "subcategories": [
+          {
+            "name": "Cables",
+            "id": 10236
+          },
+          {
+            "name": "Compresores y ecualizadores",
+            "id": 10237
+          },
+          {
+            "name": "Dispositivos de grabación",
+            "id": 10238
+          },
+          {
+            "name": "Mesas de mezclas y DJ",
+            "id": 10239
+          },
+          {
+            "name": "Micrófonos y accesorios",
+            "id": 10240
+          }
+        ]
+      },
+      {
+        "name": "Instrumentos musicales",
+        "id": 10063,
+        "subcategories": [
+          {
+            "name": "Bajos",
+            "id": 10241
+          },
+          {
+            "name": "Guitarras",
+            "id": 10242
+          },
+          {
+            "name": "Instrumentos de cuerda",
+            "id": 10243
+          },
+          {
+            "name": "Instrumentos de viento",
+            "id": 10244
+          },
+          {
+            "name": "Percusión",
+            "id": 10245
+          },
+          {
+            "name": "Teclados",
+            "id": 10246
+          }
+        ]
+      },
+      {
+        "name": "Libros",
+        "id": 10064,
+        "subcategories": [
+          {
+            "name": "Libros antiguos",
+            "id": 10247
+          },
+          {
+            "name": "Libros escolares y de texto",
+            "id": 10248
+          },
+          {
+            "name": "Libros infantiles y juveniles",
+            "id": 10249
+          },
+          {
+            "name": "Libros prácticos y de referencia",
+            "id": 10250
+          },
+          {
+            "name": "Literatura y narrativa",
+            "id": 10251
+          }
+        ]
+      },
+      {
+        "name": "Partituras y libretos",
+        "id": 10066,
+        "subcategories": []
+      },
+      {
+        "name": "Películas y Series",
+        "id": 10067,
+        "subcategories": [
+          {
+            "name": "Cintas de VHS",
+            "id": 10252
+          },
+          {
+            "name": "Colecciones de películas y series",
+            "id": 10255
+          },
+          {
+            "name": "DVDs y Blu-ray",
+            "id": 10253
+          },
+          {
+            "name": "LaserDiscs",
+            "id": 10254
+          },
+          {
+            "name": "Otros formatos",
+            "id": 10256
+          }
+        ]
+      },
+      {
+        "name": "Pósters y merchandising",
+        "id": 10068,
+        "subcategories": []
+      },
+      {
+        "name": "Revistas",
+        "id": 10069,
+        "subcategories": []
+      },
+      {
+        "name": "Tocadiscos",
+        "id": 10070,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 10065,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Niños y Bebés",
+    "id": 12461,
+    "subcategories": [
+      {
+        "name": "Accesorios de baño",
+        "id": 10177,
+        "subcategories": []
+      },
+      {
+        "name": "Alimentación del bebé",
+        "id": 10178,
+        "subcategories": [
+          {
+            "name": "Baberos y paños",
+            "id": 10342
+          },
+          {
+            "name": "Batidoras y mezcladores",
+            "id": 10343
+          },
+          {
+            "name": "Biberones & calientabiberones",
+            "id": 10344
+          },
+          {
+            "name": "Chupetes",
+            "id": 10345
+          },
+          {
+            "name": "Utensilios y cubertería",
+            "id": 10346
+          }
+        ]
+      },
+      {
+        "name": "Artículos de maternidad",
+        "id": 10179,
+        "subcategories": [
+          {
+            "name": "Lactancia",
+            "id": 10347
+          },
+          {
+            "name": "Libros para madres y padres",
+            "id": 10348
+          }
+        ]
+      },
+      {
+        "name": "Artículos escolares",
+        "id": 10180,
+        "subcategories": [
+          {
+            "name": "Mochilas",
+            "id": 10349
+          },
+          {
+            "name": "Porta meriendas",
+            "id": 10350
+          },
+          {
+            "name": "Uniformes",
+            "id": 10351
+          }
+        ]
+      },
+      {
+        "name": "Cunas y camas",
+        "id": 10182,
+        "subcategories": [
+          {
+            "name": "Camas infantiles",
+            "id": 10356
+          },
+          {
+            "name": "Cunas",
+            "id": 10357
+          },
+          {
+            "name": "Iluminación infantil",
+            "id": 10358
+          },
+          {
+            "name": "Ropa de cama infantil",
+            "id": 10359
+          },
+          {
+            "name": "Ropa de cuna",
+            "id": 10360
+          },
+          {
+            "name": "Sacos de dormir",
+            "id": 10361
+          }
+        ]
+      },
+      {
+        "name": "Disfraces infantiles",
+        "id": 10183,
+        "subcategories": []
+      },
+      {
+        "name": "Juguetes, juegos y peluches",
+        "id": 10184,
+        "subcategories": [
+          {
+            "name": "Juegos de mesa",
+            "id": 10362
+          },
+          {
+            "name": "Juguetes",
+            "id": 10363
+          },
+          {
+            "name": "Peluches",
+            "id": 10364
+          }
+        ]
+      },
+      {
+        "name": "Mobiliario infantil",
+        "id": 10185,
+        "subcategories": []
+      },
+      {
+        "name": "Ropa infantil",
+        "id": 10187,
+        "subcategories": [
+          {
+            "name": "0-6 meses (68 cm)",
+            "id": 10365
+          },
+          {
+            "name": "6-9 meses (74 cm)",
+            "id": 10374
+          },
+          {
+            "name": "9-12 meses (80 cm)",
+            "id": 10376
+          },
+          {
+            "name": "12-18 meses (86 cm)",
+            "id": 10367
+          },
+          {
+            "name": "18-24 meses (92 cm)",
+            "id": 10369
+          },
+          {
+            "name": "2-3 años (98 cm)",
+            "id": 10370
+          },
+          {
+            "name": "3-4 años (104 cm)",
+            "id": 10371
+          },
+          {
+            "name": "4-5 años (110 cm)",
+            "id": 10372
+          },
+          {
+            "name": "6-7 años (116 cm)",
+            "id": 10373
+          },
+          {
+            "name": "8-9 años (130 cm)",
+            "id": 10375
+          },
+          {
+            "name": "10-12 años (150 cm)",
+            "id": 10366
+          },
+          {
+            "name": "13-14 años (164 cm)",
+            "id": 10368
+          }
+        ]
+      },
+      {
+        "name": "Seguridad y cuidado",
+        "id": 10188,
+        "subcategories": [
+          {
+            "name": "Arneses de seguridad",
+            "id": 10377
+          },
+          {
+            "name": "Monitores para bebés",
+            "id": 10378
+          },
+          {
+            "name": "Pegatinas para el coche",
+            "id": 10379
+          },
+          {
+            "name": "Puertas de seguridad y parques",
+            "id": 10380
+          },
+          {
+            "name": "Termómetros para bebés",
+            "id": 10381
+          }
+        ]
+      },
+      {
+        "name": "Transporte del bebé",
+        "id": 10181,
+        "subcategories": [
+          {
+            "name": "Cochecitos",
+            "id": 10352
+          },
+          {
+            "name": "Portabebés",
+            "id": 10353
+          },
+          {
+            "name": "Sillas de coche",
+            "id": 10354
+          },
+          {
+            "name": "Sillas de paseo",
+            "id": 10355
+          }
+        ]
+      },
+      {
+        "name": "Tronas y andadores",
+        "id": 10189,
+        "subcategories": [
+          {
+            "name": "Andadores",
+            "id": 10382
+          },
+          {
+            "name": "Correpasillos",
+            "id": 10383
+          },
+          {
+            "name": "Tronas",
+            "id": 10384
+          }
+        ]
+      },
+      {
+        "name": "Otros",
+        "id": 10186,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Coleccionismo",
+    "id": 18000,
+    "subcategories": [
+      {
+        "name": "Antigüedades",
+        "id": 10071,
+        "subcategories": []
+      },
+      {
+        "name": "Artesanías y decoración",
+        "id": 10072,
+        "subcategories": []
+      },
+      {
+        "name": "Artículos de escritorio",
+        "id": 10073,
+        "subcategories": []
+      },
+      {
+        "name": "Banderas",
+        "id": 10074,
+        "subcategories": []
+      },
+      {
+        "name": "Coches y motocicletas",
+        "id": 10075,
+        "subcategories": []
+      },
+      {
+        "name": "Coleccionismo deportivo",
+        "id": 10076,
+        "subcategories": []
+      },
+      {
+        "name": "Coleccionismo militar",
+        "id": 10077,
+        "subcategories": []
+      },
+      {
+        "name": "Filatelia y sellos",
+        "id": 10078,
+        "subcategories": []
+      },
+      {
+        "name": "Imanes",
+        "id": 10079,
+        "subcategories": []
+      },
+      {
+        "name": "Llaveros",
+        "id": 10080,
+        "subcategories": []
+      },
+      {
+        "name": "Monedas y billetes",
+        "id": 10081,
+        "subcategories": []
+      },
+      {
+        "name": "Muñecos",
+        "id": 10082,
+        "subcategories": []
+      },
+      {
+        "name": "Naipes",
+        "id": 10083,
+        "subcategories": []
+      },
+      {
+        "name": "Postales y suvenires",
+        "id": 10085,
+        "subcategories": []
+      },
+      {
+        "name": "Relojes",
+        "id": 10086,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 10084,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Construcción y Reformas",
+    "id": 19000,
+    "subcategories": [
+      {
+        "name": "Balcones",
+        "id": 10138,
+        "subcategories": []
+      },
+      {
+        "name": "Baños",
+        "id": 10139,
+        "subcategories": [
+          {
+            "name": "Bañeras",
+            "id": 10313
+          },
+          {
+            "name": "Duchas",
+            "id": 10314
+          },
+          {
+            "name": "Inodoros",
+            "id": 10315
+          },
+          {
+            "name": "Lavamanos",
+            "id": 10316
+          }
+        ]
+      },
+      {
+        "name": "Cocinas",
+        "id": 10140,
+        "subcategories": []
+      },
+      {
+        "name": "Electricidad e Iluminación",
+        "id": 10141,
+        "subcategories": []
+      },
+      {
+        "name": "Escaleras y andamios",
+        "id": 10142,
+        "subcategories": []
+      },
+      {
+        "name": "Ferretería",
+        "id": 10143,
+        "subcategories": []
+      },
+      {
+        "name": "Herramientas y maquinaria",
+        "id": 10144,
+        "subcategories": [
+          {
+            "name": "Herramientas",
+            "id": 10317
+          },
+          {
+            "name": "Herramientas eléctricas",
+            "id": 10318
+          },
+          {
+            "name": "Maquinaria",
+            "id": 10319
+          }
+        ]
+      },
+      {
+        "name": "Madera y otros materiales",
+        "id": 10145,
+        "subcategories": []
+      },
+      {
+        "name": "Pavimentos y revestimientos",
+        "id": 10147,
+        "subcategories": [
+          {
+            "name": "Baldosas y azulejos",
+            "id": 10320
+          },
+          {
+            "name": "Parquet",
+            "id": 10321
+          }
+        ]
+      },
+      {
+        "name": "Pinturas y barnices",
+        "id": 10148,
+        "subcategories": [
+          {
+            "name": "Barnices",
+            "id": 10322
+          },
+          {
+            "name": "Pinturas",
+            "id": 10323
+          }
+        ]
+      },
+      {
+        "name": "Puertas y ventanas",
+        "id": 10149,
+        "subcategories": [
+          {
+            "name": "Cristales",
+            "id": 10324
+          },
+          {
+            "name": "Puertas",
+            "id": 10325
+          },
+          {
+            "name": "Puertas correderas",
+            "id": 10326
+          },
+          {
+            "name": "Ventanas",
+            "id": 10327
+          }
+        ]
+      },
+      {
+        "name": "Otros",
+        "id": 10146,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Industria y Agricultura",
+    "id": 20000,
+    "subcategories": [
+      {
+        "name": "Agricultura",
+        "id": 10128,
+        "subcategories": [
+          {
+            "name": "Herramientas agrícolas",
+            "id": 10293
+          },
+          {
+            "name": "Insumos agrícolas",
+            "id": 10294
+          },
+          {
+            "name": "Maquinaria",
+            "id": 10295
+          },
+          {
+            "name": "Repuestos",
+            "id": 10296
+          },
+          {
+            "name": "Tractores",
+            "id": 10297
+          },
+          {
+            "name": "Vehículos",
+            "id": 10298
+          }
+        ]
+      },
+      {
+        "name": "Industria",
+        "id": 10129,
+        "subcategories": [
+          {
+            "name": "Equipamiento industrial",
+            "id": 10299
+          },
+          {
+            "name": "Herramientas",
+            "id": 10300
+          },
+          {
+            "name": "Insumos industriales",
+            "id": 10301
+          },
+          {
+            "name": "Repuestos de herramientas",
+            "id": 10302
+          },
+          {
+            "name": "Repuestos de maquinaria",
+            "id": 10303
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Empleo",
+    "id": 21000,
+    "subcategories": [
+      {
+        "name": "Busco empleo",
+        "id": 10116,
+        "subcategories": []
+      },
+      {
+        "name": "Ofertas de empleo",
+        "id": 10117,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Servicios",
+    "id": 13200,
+    "subcategories": [
+      {
+        "name": "Clases y entrenamiento",
+        "id": 10190,
+        "subcategories": [
+          {
+            "name": "Clases de idiomas",
+            "id": 10385
+          },
+          {
+            "name": "Personal trainers",
+            "id": 10386
+          },
+          {
+            "name": "Tutores y soporte escolar",
+            "id": 10387
+          }
+        ]
+      },
+      {
+        "name": "Cuidadoras y niñeras",
+        "id": 10191,
+        "subcategories": [
+          {
+            "name": "Cuidadores de ancianos",
+            "id": 10388
+          },
+          {
+            "name": "Niñeras",
+            "id": 10389
+          }
+        ]
+      },
+      {
+        "name": "Mudanzas y transporte",
+        "id": 10192,
+        "subcategories": [
+          {
+            "name": "Mensajería",
+            "id": 10390
+          },
+          {
+            "name": "Mudanzas",
+            "id": 10391
+          },
+          {
+            "name": "Transporte",
+            "id": 10392
+          }
+        ]
+      },
+      {
+        "name": "Reparaciones",
+        "id": 10194,
+        "subcategories": []
+      },
+      {
+        "name": "Servicios de limpieza",
+        "id": 10195,
+        "subcategories": []
+      },
+      {
+        "name": "Servicios del hogar",
+        "id": 10196,
+        "subcategories": [
+          {
+            "name": "Albañil",
+            "id": 10393
+          },
+          {
+            "name": "Electricista",
+            "id": 10394
+          }
+        ]
+      },
+      {
+        "name": "Terapia y crecimiento personal",
+        "id": 10197,
+        "subcategories": []
+      },
+      {
+        "name": "Otros",
+        "id": 10193,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "Otros",
+    "id": 12485,
+    "subcategories": []
+  }
+]
