@@ -21,7 +21,7 @@ function startScheduler() {
 
   // Busqueda de oportunidades
   runAndSchedule(() => {
-    searchOpportunities(reservedUrls)
+    searchOpportunities()
       .then(() => console.log("Búsqueda ejecutada correctamente."))
       .catch((error) => console.error("Error al ejecutar la búsqueda:", error));
   }, 600000); // Ejecutar cada 2 minutos (120,000 milisegundos)

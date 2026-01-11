@@ -166,13 +166,7 @@ const reservedUrls = [
   // "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=festool",
 ];
 
-const opportunityUrls = [
-  // MИviles y telefonЁa
-  "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&category_ids=16000&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=moviles&items_count=40",
-  "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&category_ids=16000&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=smartphones&items_count=40",
-];
 
 module.exports = {
   reservedUrls,
-  opportunityUrls,
 };

@@ -1,32 +1,13 @@
 const connection = require("../../db");
-const { opportunityUrls } = require("../../config/watchlist");
-const axios = require("axios");
-const cheerio = require("cheerio");
 const { notification } = require("../../integrations/discord/notifier");
-const https = require("https");
-const { analyzeHddListing } = require("../ai/hddAnalyzer");
 const { fetchUrl } = require("./fetchUrl");
 const { checkIfDataModelChanged } = require("./checkIfDataModelChanged");
 const { updateLastExecution } = require("./updateLastExecution");
-const { removeDuplicateProducts } = require("../../utils/removeDuplicateProducts");
+const {
+  removeDuplicateProducts,
+} = require("../../utils/removeDuplicateProducts");
 const { formatProducts } = require("../../utils/formatProducts");
 const { filterOpportunities } = require("./filterOpportunities");
-
-function getstate(estado) {
-  const estados = {
-    "Sin estrenar": "sin abrir",
-    "En su caja": "sin abrir",
-    "Sin abrir": "sin abrir",
-    Nuevo: "nuevo",
-    "Como nuevo": "como nuevo",
-    "En buen estado": "en buen estado",
-    "Buen estado": "en buen estado",
-    "En condiciones aceptables": "en condiciones aceptables",
-    "Lo ha dado todo": "lo ha dado todo",
-  };
-
-  return estados[estado] || null;
-}
 
 // Búsqueda general de todas las urls
 async function searchOpportunities() {
@@ -153,81 +134,6 @@ async function fetchNewProducts(url) {
   return newestItems;
 }
 
-// Obtener la categoría de la búsqueda con la url
-function getCategoryNameByUrl(url) {
-  // Obtener el valor del parámetro "category_ids" de la URL
-  const urlParams = new URLSearchParams(new URL(url).search);
-  const categoryIds = urlParams.get("category_ids");
-
-  // Mapear los IDs de categoría a sus correspondientes categorías
-  const categorias = {
-    100: "coches",
-    12800: "Motor y accesorios",
-    12545: "TV, audio y foto",
-    16000: "Móviles y telefonía",
-    15000: "Informatica y electronica",
-    12579: "Deporte y ocio",
-    12900: "Consolas y videojuegos",
-    12467: "Hogar y jardín",
-    13100: "Electrodomésticos",
-  };
-
-  // Devolver la categoría correspondiente o un mensaje de categoría desconocida
-  return categorias[categoryIds] || "Categoría desconocida";
-}
-
-// Obtener las keywords de la búsqueda con la url
-function getNameByUrl(url) {
-  // Obtener el valor del parámetro "keywords" de la URL
-  const urlParams = new URLSearchParams(new URL(url).search);
-  const keywords = urlParams.get("keywords");
-
-  // Devolver el valor de "keywords"
-  return keywords;
-}
-
-function getProductImages(product) {
-  const images = product.images;
-  const originalImages = JSON.stringify(images.map((image) => image.original));
-  // originalImages = JSON.stringify(originalImages)
-  // console.log(typeof originalImages)
-  return originalImages;
-}
-
-// Función para eliminar todos los productos duplicados del array de productos
-function deleteDuplicatedProducts(products) {
-  // Creamos un objeto auxiliar para almacenar los objetos únicos
-  var objetosUnicos = {};
-
-  // Recorremos el array de objetos
-  for (var i = 0; i < products.length; i++) {
-    var objeto = products[i];
-    var articleId = objeto.article_id;
-
-    // Verificamos si el objeto ya ha sido agregado a los objetos únicos
-    if (!objetosUnicos.hasOwnProperty(articleId)) {
-      objetosUnicos[articleId] = objeto;
-    }
-  }
-
-  // Convertimos el objeto de objetos únicos a un array
-  var resultado = Object.values(objetosUnicos);
-
-  return resultado;
-}
-
-function calcularSumaTotalPrecios(arrayObjetos) {
-  let sumaTotal = 0;
-
-  for (let i = 0; i < arrayObjetos.length; i++) {
-    const objeto = arrayObjetos[i];
-    if (objeto.hasOwnProperty("price")) {
-      sumaTotal += objeto.price;
-    }
-  }
-
-  return sumaTotal;
-}
 
 function stringifyNotification(opportunities) {
   let msj = `**Nuevas ${opportunities.length} posibles oportunidades encontradas :**\n \n`;
@@ -239,8 +145,6 @@ function stringifyNotification(opportunities) {
     msj += `[${decodeURIComponent(title)}](${decodeURIComponent(
       article_url
     )}) ${opportunities[i].price}€ \n
-     
-    
     `;
   }
 
@@ -266,10 +170,4 @@ async function getLastProductCreation() {
 
 module.exports = {
   searchOpportunities,
-  formatProducts,
-  getProductImages,
-  deleteDuplicatedProducts,
-  getCategoryNameByUrl,
-  getNameByUrl,
-  calcularSumaTotalPrecios,
 };
