@@ -1,6 +1,8 @@
 const urls = require("./urls.json");
 const { getAllNewProducts } = require("./utils/getAllNewProducts");
-const { extractOpportunities } = require("./utils/extractOpportunities");
+const {
+  extractOpportunities,
+} = require("./utils/extractOpportunities/extractOpportunities");
 
 // Bǧsqueda general de todas las urls
 async function newSearchOpportunities() {
@@ -11,20 +13,22 @@ async function newSearchOpportunities() {
   console.log("");
 
   try {
-    let allNewProducts = [];
     let opportunities = [];
 
     console.log("Obteniendo todos los nuevos productos...");
-    let newProducts = await getAllNewProducts(urls);
-    allNewProducts = allNewProducts.concat(newProducts);
-    console.log("allNewProducts.length", allNewProducts?.length);
+    let searchResults = await getAllNewProducts(urls);
+    const totalProducts = searchResults.reduce(
+      (total, result) => total + result.items.length,
+      0
+    );
+    console.log("totalProducts", totalProducts);
 
-    if (allNewProducts.length > 0) {
+    if (totalProducts > 0) {
       console.log("Extrayendo oportunidades...");
-      opportunities = await extractOpportunities(allNewProducts);
+      opportunities = await extractOpportunities(searchResults);
       console.log("");
       console.log(
-        `${allNewProducts.length} nuevos productos, de los cuales ${opportunities.length} son oportunidades.`
+        `${totalProducts} nuevos productos, de los cuales ${opportunities.length} son oportunidades.`
       );
       console.log("");
     }

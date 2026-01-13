@@ -1,31 +1,35 @@
-const { fetchNewProducts } = require("./fetchNewProducts");
+﻿const { fetchNewProducts } = require("./fetchNewProducts");
 const { formatProducts } = require("./formatProducts");
-const {
-  removeDuplicateProducts,
-} = require("../../../utils/removeDuplicateProducts");
 
 async function getAllNewProducts(urlList = urls) {
   console.log("getAllNewProducts");
-  // Obtener todos los prouctos nuevos
-  let allNewProducts = [];
-  for (const { url } of urlList) {
+  // Obtener todos los productos nuevos
+  const wrappedResults = [];
+  let totalProducts = 0;
+
+  for (const { url, category } of urlList) {
     const newProducts = await fetchNewProducts(url);
-    allNewProducts = allNewProducts.concat(newProducts);
+    const formattedProducts = await formatProducts(newProducts);
+
+    wrappedResults.push({
+      source: {
+        category,
+        url,
+      },
+      items: formattedProducts,
+    });
+    totalProducts += formattedProducts.length;
   }
 
-  console.log(allNewProducts.length + " productos nuevos encontrados.");
+  console.log(totalProducts + " productos nuevos encontrados.");
 
-  // ELIMINA DUPLICADOS Eliminar repetidos en caso de que haya un producto duplicado para prevenir
-  allNewProducts = removeDuplicateProducts(allNewProducts);
+  // ACTUALIZA LA ULTIMA EJECUCION
+  const firstProduct = wrappedResults.find((result) => result.items.length > 0)
+    ?.items[0];
+  console.log("titulo del ultimo producto publicado: " + firstProduct?.title);
+  // await updateLastExecution(firstProduct?.created_at);
 
-  // ACTUALIZA LA ÚLTIMA EJECUCIÓN
-  console.log(
-    "título del último producto publicado: " + allNewProducts[0]?.title
-  );
-  // await updateLastExecution(allNewProducts[0].created_at);
-
-  // FORMATEA Dar el formato personalizado al los productos
-  return (allNewProducts = await formatProducts(allNewProducts));
+  return wrappedResults;
 }
 
 module.exports = {

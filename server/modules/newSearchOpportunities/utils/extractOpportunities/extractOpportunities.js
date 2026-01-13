@@ -1,8 +1,9 @@
-async function extractOpportunities(allItems) {
+async function extractOpportunities(searchResults) {
   console.log("extractOpportunities ejecutado");
+  console.log("searchResults", JSON.stringify(searchResults.slice(0, 2)));
 
-  //   console.log("raw json:", JSON.stringify(allItems[0]));
-  //   console.log("typeof allItems:", typeof allItems);
+  //   console.log("raw json:", JSON.stringify(searchResults[0]));
+  //   console.log("typeof searchResults:", typeof searchResults);
 
   // Paso 1: Llama a la IA con el prompt según la categoría
 
