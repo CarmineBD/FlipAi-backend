@@ -1,0 +1,41 @@
+const PROMPT_OBJECT = {
+  model: "gpt-4.1-nano",
+  instructions: `
+    Devuelve SOLO JSON válido según el schema.
+
+    Reglas:
+    - is_iphone: true solo si el anuncio es de moviles iphone, ignorar fundas, cargadores, accesorios, etc.
+    - has_defects: false si el producto funciona correcrtamente, no tiene detalles ni desprefectos.
+    - sealed: true solo si menciona que está precintado y la caja está sin abrir.
+    - capacity_gb: capacidad de almacenamiento TOTAL (no ram) en GB. Si no se puede inferir, null.
+    - confidence: valor 0..1 según claridad del anuncio.
+  `.trim(),
+  max_output_tokens: 120,
+  text: {
+    format: {
+      type: "json_schema",
+      strict: true,
+      name: "storage_listing",
+      schema: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          is_iphone: { type: "boolean" },
+          has_defects: { type: "boolean" },
+          sealed: { type: "boolean" },
+          capacity_gb: { anyOf: [{ type: "number" }, { type: "null" }] },
+          confidence: { type: "number", minimum: 0, maximum: 1 },
+        },
+        required: [
+          "is_iphone",
+          "has_defects",
+          "sealed",
+          "capacity_gb",
+          "confidence",
+        ],
+      },
+    },
+  },
+};
+
+module.exports = { PROMPT_OBJECT };

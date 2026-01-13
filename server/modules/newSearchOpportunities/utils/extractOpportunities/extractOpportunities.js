@@ -1,4 +1,5 @@
 ﻿const { getCategoryFilter } = require("../../filters");
+const { fillCustomFieldsWithAI } = require("./fillCustomFieldsWithAI");
 
 async function extractOpportunities(searchResults) {
   console.log("extractOpportunities ejecutado");
@@ -18,6 +19,7 @@ async function extractOpportunities(searchResults) {
 
       console.log(`${item.title} (${category})`);
       // Paso 1: llama a la IA con el prompt segun la categoria
+      await fillCustomFieldsWithAI({ item, category });
 
       // Paso 2: Define el SKU segun categoria
 
