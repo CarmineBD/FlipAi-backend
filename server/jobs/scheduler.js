@@ -4,6 +4,9 @@ const { dailyCheck } = require("../modules/maintenance/dailyCheck");
 const {
   searchOpportunities,
 } = require("../modules/opportunities/customOpportunityChecker");
+const {
+  newSearchOpportunities,
+} = require("../modules/newSearchOpportunities/newSearchOpportunities");
 const { reservedUrls } = require("../config/watchlist");
 
 function runAndSchedule(fn, interval) {
@@ -19,9 +22,15 @@ function startScheduler() {
       .catch((error) => console.error("Error al ejecutar la búsqueda:", error));
   }, 1200000); // Ejecutar cada 20 minutos (1,200,000 milisegundos)
 
-  // Busqueda de oportunidades
+  // // Busqueda de oportunidades
+  // runAndSchedule(() => {
+  //   searchOpportunities()
+  //     .then(() => console.log("Búsqueda ejecutada correctamente."))
+  //     .catch((error) => console.error("Error al ejecutar la búsqueda:", error));
+  // }, 600000); // Ejecutar cada 2 minutos (120,000 milisegundos)
+
   runAndSchedule(() => {
-    searchOpportunities()
+    newSearchOpportunities()
       .then(() => console.log("Búsqueda ejecutada correctamente."))
       .catch((error) => console.error("Error al ejecutar la búsqueda:", error));
   }, 600000); // Ejecutar cada 2 minutos (120,000 milisegundos)

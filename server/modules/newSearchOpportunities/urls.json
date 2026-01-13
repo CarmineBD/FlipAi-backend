@@ -1,0 +1,10 @@
+[
+  {
+    "category": "moviles",
+    "url": "https://api.wallapop.com/api/v3/search?source=search_box&order_by=newest&is_shippable=true&distance_in_km=5"
+  },
+  {
+    "category": "ssd",
+    "url": "https://api.wallapop.com/api/v3/search?keywords=disco+duro+HDD&category_id=24200&order_by=most_relevance&country_code=ES&saved_search_id=7a9a1c92-c628-4ce8-ad74-00918abfe28c&source=search_box&latitude=41.4172299&longitude=2.1480341"
+  }
+]
