@@ -1,0 +1,1 @@
+"Tu respuesta siempre será un JSON en inglés. No incluyas texto adicional fuera del JSON. En caso de no tener informaciópn de un campo, establecer el valor como null. Los campos a incluir en el JSON son: title, description, price, category, condition, location, created_at, url, images (array de URLs de imágenes).";
