@@ -4,8 +4,9 @@ const PROMPT_OBJECT = {
     Devuelve SOLO JSON válido según el schema.
 
     Reglas:
-    - is_storage_listing: true solo si el anuncio es de discos de almacenamiento para PC.
+    - is_storage_listing: true solo si el anuncio es de discos duros internos de ordenador. Ignorar accesorios, cables, adaptadores, laptops, ordenadores etc.
     - is_hdd: true si es disco mecánico (HDD). False si es SSD/NVMe/otros.
+    - hasDefects: true si el anuncio menciona que el disco tiene defectos, warnings o no funciona correctamente.
     - interface: SATA o SAS solo si aparece explícitamente, si no UNKNOWN.
     - capacity_tb: capacidad TOTAL en TB (2000GB=2, 500GB=0.5). Si no se puede inferir, null.
     - units: número de unidades si se menciona (lote, pack, xN). Si no, null.
@@ -23,6 +24,7 @@ const PROMPT_OBJECT = {
         properties: {
           is_storage_listing: { type: "boolean" },
           is_hdd: { type: "boolean" },
+          hasDefects: { type: "boolean" },
           interface: { type: "string", enum: ["SATA", "SAS", "UNKNOWN"] },
           capacity_tb: { anyOf: [{ type: "number" }, { type: "null" }] },
           units: { anyOf: [{ type: "number" }, { type: "null" }] },
@@ -31,6 +33,7 @@ const PROMPT_OBJECT = {
         required: [
           "is_storage_listing",
           "is_hdd",
+          "hasDefects",
           "interface",
           "capacity_tb",
           "units",

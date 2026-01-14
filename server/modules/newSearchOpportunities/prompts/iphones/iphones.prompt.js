@@ -5,6 +5,7 @@ const PROMPT_OBJECT = {
 
     Reglas:
     - is_iphone: true solo si el anuncio es de moviles iphone, ignorar fundas, cargadores, accesorios, etc.
+    - model: modelo exacto del iphone (ej: iphone_12_pro_max, iphone_16_pro, iphone_xr). Solo modelo, no almacenamiento, color, etc, si se desconoce: "UNKNOWN".
     - has_defects: false si el producto funciona correcrtamente, no tiene detalles ni desprefectos.
     - sealed: true solo si menciona que está precintado y la caja está sin abrir.
     - capacity_gb: capacidad de almacenamiento TOTAL (no ram) en GB. Si no se puede inferir, null.
@@ -21,6 +22,7 @@ const PROMPT_OBJECT = {
         additionalProperties: false,
         properties: {
           is_iphone: { type: "boolean" },
+          model: { type: "string" },
           has_defects: { type: "boolean" },
           sealed: { type: "boolean" },
           capacity_gb: { anyOf: [{ type: "number" }, { type: "null" }] },
@@ -28,6 +30,7 @@ const PROMPT_OBJECT = {
         },
         required: [
           "is_iphone",
+          "model",
           "has_defects",
           "sealed",
           "capacity_gb",

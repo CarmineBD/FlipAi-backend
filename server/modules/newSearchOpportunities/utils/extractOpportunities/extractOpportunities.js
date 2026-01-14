@@ -19,13 +19,15 @@ async function extractOpportunities(searchResults) {
 
       console.log(`${item.title} (${category})`);
       // Paso 1: llama a la IA con el prompt segun la categoria
-      await fillCustomFieldsWithAI({ item, category });
+      let normalized_item = await fillCustomFieldsWithAI({ item, category });
 
-      // Paso 2: Define el SKU segun categoria
+      console.log("item despues de fillCustomFieldsWithAI:", normalized_item);
 
-      // Paso 3: Busca rules de categoria segun SKU
+      // Paso 2: Busca rules de categoria segun SKU
 
       // Paso 4: Ejecuta la logica por cada SKU encontrada
+
+      // Paso 5: Si hay oportunidades, se guarda en un array para devolverla
     }
   }
 
