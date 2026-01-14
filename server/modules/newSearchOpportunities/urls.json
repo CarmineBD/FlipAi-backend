@@ -5,6 +5,6 @@
   },
   {
     "category": "iphones",
-    "url": "https://api.wallapop.com/api/v3/search?keywords=iphone&category_id=24200&order_by=newest&country_code=ES&source=search_box&subcategory_ids=24201&distance_in_km=10"
+    "url": "https://api.wallapop.com/api/v3/search?keywords=iphone&category_id=24200&order_by=newest&country_code=ES&latitude=41.4172299&longitude=2.1480341&source=search_box&subcategory_ids=24201&distance_in_km=5"
   }
 ]

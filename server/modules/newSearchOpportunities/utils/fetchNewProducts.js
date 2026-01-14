@@ -1,10 +1,11 @@
-const { getLastProductCreation } = require("./getLastProductCreation");
 const { fetchUrl } = require("./fetchUrl");
 
-async function fetchNewProducts(url) {
+async function fetchNewProducts(url, lastExecution) {
   let newestItems = [];
   let currentUrl = url;
-  let lastProductCreation = await getLastProductCreation(); //esto hay que cambiarlo, ya que hace una consulta cada vez que se ejecuta
+  const lastProductCreation = Number.isFinite(lastExecution)
+    ? lastExecution
+    : 0;
   console.log("lastProductCreation", lastProductCreation);
   // Para mostrar la category_id en el mensaje de carga de la consola
   let regex = /[?&]category_id=(\d+)/;

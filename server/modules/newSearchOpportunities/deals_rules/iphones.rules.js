@@ -2,9 +2,11 @@ const iphoneRulesByKey = {
   iphone_11: [
     {
       id: "ip11_gt90_lt200",
-      label: "Batería > 90, sin defectos, <200€",
+      label: "Batería >= 70, sin defectos, < 150€ ",
       when: (p) =>
-        !p.custom.defects && (p.custom.battery_life ?? 0) > 90 && p.price < 200,
+        !p.ai_fields.parsed.has_defects &&
+        (p.ai_fields.parsed.battery_life ?? 0) >= 70 &&
+        p.price < 150,
     },
   ],
   global: [],

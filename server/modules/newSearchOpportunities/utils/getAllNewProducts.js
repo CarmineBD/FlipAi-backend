@@ -1,24 +1,28 @@
 ﻿const { fetchNewProducts } = require("./fetchNewProducts");
 const { formatProducts } = require("./formatProducts");
-
-async function getAllNewProducts(urlList = urls) {
+async function getAllNewProducts(urlList = urls, lastExecution) {
   console.log("getAllNewProducts");
   // Obtener todos los productos nuevos
   const wrappedResults = [];
   let totalProducts = 0;
+  const cutoff = Number.isFinite(lastExecution) ? lastExecution : 0;
+  console.log("lastProductCreation", cutoff);
 
   for (const { url, category } of urlList) {
-    const newProducts = await fetchNewProducts(url);
+    const newProducts = await fetchNewProducts(url, cutoff);
     const formattedProducts = await formatProducts(newProducts);
+    const filteredProducts = formattedProducts.filter(
+      (product) => product.creation_date > cutoff
+    );
 
     wrappedResults.push({
       source: {
         category,
         url,
       },
-      items: formattedProducts,
+      items: filteredProducts,
     });
-    totalProducts += formattedProducts.length;
+    totalProducts += filteredProducts.length;
   }
 
   console.log(totalProducts + " productos nuevos encontrados.");

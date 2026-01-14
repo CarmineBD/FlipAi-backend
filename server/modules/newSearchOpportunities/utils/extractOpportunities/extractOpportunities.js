@@ -1,15 +1,19 @@
 ﻿const { getCategoryFilter } = require("../../filters");
 const { fillCustomFieldsWithAI } = require("./fillCustomFieldsWithAI");
+const { evaluate } = require("./ruleEngine");
+const { getRulesByCategory } = require("../../deals_rules");
 
 async function extractOpportunities(searchResults) {
   console.log("extractOpportunities ejecutado");
   // console.log("searchResults", JSON.stringify(searchResults.slice(0, 2)));
   let filteredOutCount = 0;
+  const opportunities = [];
 
   // Iterar sobre los resultados de busqueda
   for (const { source, items } of searchResults) {
     const category = source?.category ?? "sin_categoria";
     const basicFilter = getCategoryFilter(category);
+    const rulesByKey = getRulesByCategory(category);
     for (const item of items) {
       // Paso 0: Aplicar filtros basicos segun categoria para evitar llamadas innecesarias a la IA, por ejemplo: precio maximo, palabras prohibidas, etc.
       if (!basicFilter({ item, source, category })) {
@@ -17,11 +21,24 @@ async function extractOpportunities(searchResults) {
         continue;
       }
 
-      console.log(`${item.title} (${category})`);
       // Paso 1: llama a la IA con el prompt segun la categoria
-      let normalized_item = await fillCustomFieldsWithAI({ item, category });
+      const enrichedItem = await fillCustomFieldsWithAI({ item, category });
 
-      console.log("item despues de fillCustomFieldsWithAI:", normalized_item);
+      // Si no hay key/custom, saltar
+      if (!enrichedItem.ai_fields.parsed || !enrichedItem.key) continue;
+
+      // 2) evaluar reglas
+      const res = evaluate(enrichedItem, rulesByKey);
+
+      // 3) si es deal, guardarlo
+      if (res.isDeal) {
+        opportunities.push({
+          category,
+          key: res.key,
+          item: enrichedItem,
+          matches: res.matches,
+        });
+      }
 
       // Paso 2: Busca rules de categoria segun SKU
 
@@ -31,11 +48,10 @@ async function extractOpportunities(searchResults) {
     }
   }
 
-  console.log(
-    `Total productos eliminados por filtros basicos: ${filteredOutCount}`
-  );
+  console.log(`Total eliminados por filtros básicos: ${filteredOutCount}`);
+  console.log(`Total oportunidades: ${opportunities.length}`);
 
-  return {};
+  return opportunities;
 }
 module.exports = {
   extractOpportunities,

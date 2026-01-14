@@ -7,7 +7,7 @@ function stringifyNotification(opportunities) {
 
     msj += `[${decodeURIComponent(title)}](${decodeURIComponent(
       article_url
-    )}) ${opportunities[i].price}€ \n
+    )}) ${opportunities[i].price}ƒ'ª \n
     `;
   }
 

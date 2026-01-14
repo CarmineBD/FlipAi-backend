@@ -9,6 +9,7 @@ const PROMPT_OBJECT = {
     - has_defects: false si el producto funciona correcrtamente, no tiene detalles ni desprefectos.
     - sealed: true solo si menciona que está precintado y la caja está sin abrir.
     - capacity_gb: capacidad de almacenamiento TOTAL (no ram) en GB. Si no se puede inferir, null.
+    - battery_life: valor entre 0 y 100 indicando el estado de la batería. Si no se puede inferir, null.
     - confidence: valor 0..1 según claridad del anuncio.
   `.trim(),
   max_output_tokens: 120,
@@ -26,6 +27,7 @@ const PROMPT_OBJECT = {
           has_defects: { type: "boolean" },
           sealed: { type: "boolean" },
           capacity_gb: { anyOf: [{ type: "number" }, { type: "null" }] },
+          battery_life: { anyOf: [{ type: "number" }, { type: "null" }] },
           confidence: { type: "number", minimum: 0, maximum: 1 },
         },
         required: [
@@ -34,6 +36,7 @@ const PROMPT_OBJECT = {
           "has_defects",
           "sealed",
           "capacity_gb",
+          "battery_life",
           "confidence",
         ],
       },

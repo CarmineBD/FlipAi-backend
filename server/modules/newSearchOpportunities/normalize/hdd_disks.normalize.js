@@ -6,7 +6,7 @@ function normalizeHdd(ai) {
     is_hdd: !!ai.is_hdd,
     interface: iface,
     capacity_tb: ai.capacity_tb != null ? Number(ai.capacity_tb) : undefined,
-    hasDefects: !!ai.defects,
+    has_defects: !!ai.defects,
     units: ai.units != null ? Number(ai.units) : undefined,
     confidence: ai.confidence != null ? Number(ai.confidence) : undefined,
   };

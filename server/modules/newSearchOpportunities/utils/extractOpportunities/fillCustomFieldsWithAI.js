@@ -3,8 +3,6 @@ const { openai } = require("../../../../integrations/openai/client");
 const { getNormalizerByCategory } = require("../../normalize");
 
 async function fillCustomFieldsWithAI({ item, category }) {
-  console.log("fillCustomFieldsWithAI ejecutado");
-
   // Paso 1: Extraer prompt segun categoria
   const prompt = getPromptByCategory(category);
 
@@ -47,28 +45,15 @@ async function fillCustomFieldsWithAI({ item, category }) {
 
   const { custom, key } = normalizer(aiJson);
 
-  console.log("objeto final devuelto por fillCustomFieldsWithAI:", {
-    ...item,
-    custom,
-    key,
-    ai_fields: {
-      raw: aiJson,
-      parsed: custom,
-    },
-  });
-
   // Paso 4: Devolver el item modificado
   return {
     ...item,
-    custom,
     key,
     ai_fields: {
       raw: aiJson,
       parsed: custom,
     },
   };
-
-  return item;
 }
 module.exports = {
   fillCustomFieldsWithAI,
