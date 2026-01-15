@@ -24,9 +24,11 @@ function normalizeModel(modelRaw) {
 
 function normalizeGpus(ai) {
   const model = normalizeModel(ai.model);
+  const isTargetListing =
+    ai.is_target_listing != null ? !!ai.is_target_listing : !!ai.is_gpu_listing;
 
   const custom = {
-    is_gpu_listing: !!ai.is_gpu_listing,
+    is_target_listing: isTargetListing,
     model,
     has_defects: !!ai.has_defects,
     confidence: ai.confidence != null ? Number(ai.confidence) : undefined,

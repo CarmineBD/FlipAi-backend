@@ -27,6 +27,10 @@ async function extractOpportunities(searchResults) {
       // Si no hay key/custom, saltar
       if (!enrichedItem.ai_fields.parsed || !enrichedItem.key) continue;
 
+      if (!enrichedItem.ai_fields.parsed.is_target_listing) {
+        continue;
+      }
+
       // 2) evaluar reglas
       const res = evaluate(enrichedItem, rulesByKey);
 

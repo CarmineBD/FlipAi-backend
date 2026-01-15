@@ -1,8 +1,12 @@
 function normalizeHdd(ai) {
   const iface = ai.interface ? String(ai.interface).toLowerCase() : undefined;
+  const isTargetListing =
+    ai.is_target_listing != null
+      ? !!ai.is_target_listing
+      : !!ai.is_storage_listing;
 
   const custom = {
-    is_storage_listing: !!ai.is_storage_listing,
+    is_target_listing: isTargetListing,
     is_hdd: !!ai.is_hdd,
     interface: iface,
     capacity_tb: ai.capacity_tb != null ? Number(ai.capacity_tb) : undefined,

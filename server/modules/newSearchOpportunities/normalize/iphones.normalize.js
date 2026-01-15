@@ -89,8 +89,11 @@ function normalizeIphone(ai, item) {
     batteryLife = Math.round(batteryLife);
   }
 
+  const isTargetListing =
+    ai.is_target_listing != null ? !!ai.is_target_listing : !!ai.is_iphone;
+
   const custom = {
-    is_iphone: !!ai.is_iphone,
+    is_target_listing: isTargetListing,
     model,
     has_defects: !!ai.has_defects,
     sealed: !!ai.sealed,
