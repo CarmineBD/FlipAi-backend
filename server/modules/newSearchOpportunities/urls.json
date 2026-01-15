@@ -9,7 +9,11 @@
   },
   {
     "category": "gpus",
-    "url": "https://api.wallapop.com/api/v3/search?category_id=24200&subcategory_ids=10304&keywords=gpus&order_by=newest&country_code=ES&source=search_box"
+    "url": "https://api.wallapop.com/api/v3/search?category_id=24200&subcategory_ids=10304&keywords=tarjeta+grafica&order_by=newest&country_code=ES&source=search_box"
+  },
+  {
+    "category": "cpus",
+    "url": "https://api.wallapop.com/api/v3/search?category_id=24200&subcategory_ids=10304&keywords=procesador&order_by=newest&country_code=ES&source=search_box"
   },
   {
     "category": "hamster",
