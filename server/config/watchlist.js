@@ -100,7 +100,7 @@ const reservedUrls = [
 
   // "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=robot",
 
-  // "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=tarjetas graficas",
+  // "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=gpus",
   // "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=memorias ram",
   // "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=ssd",
   // "https://api.wallapop.com/api/v3/general/search?time_filter=lastWeek&latitude=41.41722000735683&longitude=2.148069973172653&order_by=newest&distance=10000&keywords=tarjetas madres",

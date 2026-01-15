@@ -38,11 +38,6 @@ async function newSearchOpportunities() {
       return latest;
     }, lastExecution);
 
-    if (mostRecentCreationDate > lastExecution) {
-      // COMENTAR PARA TESTEAR PRODUCTOS NUEVOS SIN ACTUALIZAR LASTEXECUTION
-      // await updateLastExecution(mostRecentCreationDate);
-    }
-
     if (totalProducts > 0) {
       console.log("Extrayendo oportunidades...");
       opportunities = await extractOpportunities(searchResults);
@@ -51,6 +46,10 @@ async function newSearchOpportunities() {
       console.log(
         `${totalProducts} nuevos productos, de los cuales ${opportunities.length} son oportunidades.`
       );
+
+      // COMENTAR PARA TESTEAR PRODUCTOS NUEVOS SIN ACTUALIZAR LASTEXECUTION
+      await updateLastExecution(mostRecentCreationDate);
+
       console.log("");
     }
 
