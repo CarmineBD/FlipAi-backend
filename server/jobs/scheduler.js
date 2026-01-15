@@ -33,7 +33,7 @@ function startScheduler() {
     newSearchOpportunities()
       .then(() => console.log("Búsqueda ejecutada correctamente."))
       .catch((error) => console.error("Error al ejecutar la búsqueda:", error));
-  }, 600000); // Ejecutar cada 2 minutos (120,000 milisegundos)
+  }, 600000); // Ejecutar cada 10 minutos
 
   // ejecutar el chequeo diario a las 3:00 am (mm hh)
   cron.schedule("00 3 * * *", dailyCheck);

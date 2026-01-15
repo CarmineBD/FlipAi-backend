@@ -18,7 +18,7 @@ function getCategoryFilter(category) {
     return defaultFilter;
   }
 
-  const filePath = path.join(__dirname, key, `${key}.filter.js`);
+  const filePath = path.join(__dirname, `${key}.filter.js`);
   let filterFn = defaultFilter;
   if (fs.existsSync(filePath)) {
     const mod = require(filePath);

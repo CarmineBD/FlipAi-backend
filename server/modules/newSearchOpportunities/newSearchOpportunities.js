@@ -40,7 +40,7 @@ async function newSearchOpportunities() {
 
     if (mostRecentCreationDate > lastExecution) {
       // COMENTAR PARA TESTEAR PRODUCTOS NUEVOS SIN ACTUALIZAR LASTEXECUTION
-      await updateLastExecution(mostRecentCreationDate);
+      // await updateLastExecution(mostRecentCreationDate);
     }
 
     if (totalProducts > 0) {

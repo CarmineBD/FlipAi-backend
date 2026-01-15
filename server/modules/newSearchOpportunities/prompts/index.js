@@ -14,7 +14,7 @@ function getPromptByCategory(category) {
     return null;
   }
 
-  const promptPath = path.join(__dirname, key, `${key}.prompt.js`);
+  const promptPath = path.join(__dirname, `${key}.prompt.js`);
   let prompt = null;
   if (fs.existsSync(promptPath)) {
     try {
