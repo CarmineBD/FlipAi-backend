@@ -16,6 +16,10 @@
     "url": "https://api.wallapop.com/api/v3/search?category_id=24200&subcategory_ids=10304&keywords=procesador&order_by=newest&country_code=ES&source=search_box"
   },
   {
+    "category": "aires_acondicionados",
+    "url": "https://api.wallapop.com/api/v3/search?keywords=aire+acondicionado&order_by=newest&country_code=ES&source=search_box&latitude=41.4172299&longitude=2.1480341&distance_in_km=10"
+  },
+  {
     "category": "hamster",
     "url": "https://api.wallapop.com/api/v3/search?keywords=hamster&order_by=newest&country_code=ES&source=search_box&latitude=41.4172299&longitude=2.1480341&distance_in_km=10"
   }
