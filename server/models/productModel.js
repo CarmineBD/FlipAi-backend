@@ -1045,9 +1045,8 @@ editProduct = (params) => {
         [params.selectedProductId],
         (err, result) => {
           if (err) {
-            return db.rollback(() => {
-              throw err;
-            });
+            console.error(`Error al eliminar registros en ${table}:`, err);
+            return reject(err);
           }
 
           if (selectedData.length > 0) {

@@ -13,13 +13,19 @@ const haceDosMeses = ahora - (2592000000 * 2);
 async function setOldReserveds() {
 
     db.query(`SELECT * FROM products WHERE reserved_date < ${haceUnMes} AND article_status = 'reservado' ORDER BY reserved_date DESC`, (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            console.error('Error en consulta de setOldReserveds:', error);
+            return;
+        }
 
         // Recorrer cada elemento y modificar la columna "date_sold"
         results.forEach((element) => {
             const updateQuery = `UPDATE products SET article_status = 'reservado por mucho tiempo' WHERE id = ${element.id}`;
             db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                if (updateError) throw updateError;
+                if (updateError) {
+                    console.error('Error actualizando producto en setOldReserveds:', updateError);
+                    return;
+                }
                 console.log(`Elemento actualizado con éxito: ${element.id}`);
             });
         });
@@ -36,7 +42,10 @@ async function checkMonthSales() {
     let vendidosBorrados = 0
 
     db.query(`SELECT * FROM products WHERE reserved_date > ${haceUnMes} AND article_status = 'reservado' ORDER BY reserved_date DESC`, async (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            console.error('Error en consulta de checkMonthSales:', error);
+            return;
+        }
 
         for (const element of results) {
             try {
@@ -59,7 +68,10 @@ async function checkMonthSales() {
                 updateQuery += ` WHERE id = ${element.id}`
 
                 db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                    if (updateError) throw updateError;
+                    if (updateError) {
+                        console.error('Error actualizando producto en checkMonthSales:', updateError);
+                        return;
+                    }
                     console.log(`Elemento número ${contador} actualizado con éxito: ${element.title}`);
                 });
             } catch (error) {
@@ -82,7 +94,10 @@ async function checkMonthSales() {
 
 
                 db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                    if (updateError) throw updateError;
+                    if (updateError) {
+                        console.error('Error marcando producto borrado en checkMonthSales:', updateError);
+                        return;
+                    }
                     console.log(`Elemento número ${contador} borrado con éxito: ${element.title}`);
                 });
             }
@@ -99,8 +114,11 @@ async function checkMonthSales() {
 
 // Función para eliminar los productos des-reservados
 async function deleteUnreserveds() {
-    db.query(`DELETE FROM products WHERE WHERE article_status = 'des-reservado' `, async (error, results, fields) => {
-        if (error) throw error;
+    db.query(`DELETE FROM products WHERE article_status = 'des-reservado' `, async (error, results, fields) => {
+        if (error) {
+            console.error('Error en deleteUnreserveds:', error);
+            return;
+        }
     })
 }
 
@@ -114,7 +132,10 @@ async function checkOldSales() {
     let vendidosBorrados = 0
 
     db.query(`SELECT * FROM products WHERE reserved_date < ${haceUnMes} AND article_status = 'reservado por mucho tiempo' ORDER BY reserved_date DESC`, async (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            console.error('Error en consulta de checkOldSales:', error);
+            return;
+        }
 
         for (const element of results) {
             try {
@@ -131,7 +152,10 @@ async function checkOldSales() {
                     updateQuery += ` WHERE id = ${element.id}`
 
                     db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                        if (updateError) throw updateError;
+                    if (updateError) {
+                        console.error('Error marcando oportunidad borrada en checkWeekOpportunities:', updateError);
+                        return;
+                    }
                         console.log(`Elemento número ${contador} actualizado con éxito: ${element.title}`);
                     });
                 }
@@ -155,7 +179,10 @@ async function checkOldSales() {
                 }
 
                 db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                    if (updateError) throw updateError;
+                    if (updateError) {
+                        console.error('Error actualizando producto en checkOldSales:', updateError);
+                        return;
+                    }
                     console.log(`Elemento número ${contador} borrado con éxito: ${element.title}`);
                 });
             }
@@ -173,7 +200,10 @@ async function checkOldSales() {
 // Función para eliminar los productos que llevan más de 2 meses reservado sin vender
 async function deleteOldReserveds() {
     db.query(`DELETE FROM products WHERE reserved_date < ${haceDosMeses} AND article_status = 'reservado por mucho tiempo' ORDER BY reserved_date DESC`, async (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            console.error('Error en deleteOldReserveds:', error);
+            return;
+        }
     })
 }
 
@@ -247,7 +277,10 @@ async function checkWeekOpportunities() {
     let vendidosBorrados = 0
 
     db.query(`SELECT * FROM opportunities WHERE creation_date > ${haceUnaSemana} ORDER BY creation_date DESC`, async (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            console.error('Error en consulta de checkWeekOpportunities:', error);
+            return;
+        }
 
         for (const element of results) {
             try {
@@ -280,7 +313,10 @@ async function checkWeekOpportunities() {
                 updateQuery += ` WHERE id = ${element.id}`
 
                 db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                    if (updateError) throw updateError;
+                    if (updateError) {
+                        console.error('Error marcando producto borrado en checkOldSales:', updateError);
+                        return;
+                    }
                     console.log(`Elemento número ${contador} actualizado con éxito: ${element.title}`);
                 });
             } catch (error) {
@@ -304,7 +340,10 @@ async function checkWeekOpportunities() {
 
 
                 db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                    if (updateError) throw updateError;
+                    if (updateError) {
+                        console.error('Error actualizando oportunidad en checkWeekOpportunities:', updateError);
+                        return;
+                    }
                     console.log(`Elemento número ${contador} borrado con éxito: ${element.title}`);
                 });
             }
@@ -324,13 +363,19 @@ async function checkWeekOpportunities() {
 async function setOldOpportunities() {
 
     db.query(`SELECT * FROM opportunities WHERE creation_date < ${haceUnaSemana} AND article_status = 'disponible' ORDER BY creation_date DESC`, (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            console.error('Error en consulta de setOldOpportunities:', error);
+            return;
+        }
 
         // Recorrer cada elemento y modificar la columna "date_sold"
         results.forEach((element) => {
             const updateQuery = `UPDATE opportunities SET article_status = 'disponible por mucho tiempo' WHERE id = ${element.id}`;
             db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                if (updateError) throw updateError;
+                if (updateError) {
+                    console.error('Error actualizando oportunidad en setOldOpportunities:', updateError);
+                    return;
+                }
                 console.log(`Elemento actualizado con éxito: ${element.id}`);
             });
         });

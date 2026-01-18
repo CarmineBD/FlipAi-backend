@@ -784,7 +784,10 @@ async function updateProducts(results) {
 
 
             db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                if (updateError) throw updateError;
+                if (updateError) {
+                    console.error('Error actualizando producto en updateProducts:', updateError);
+                    return;
+                }
                 console.log(`Elemento número ${contador} actualizado con éxito: ${element.title}`);
                 // console.log(elemento.w_state)
                 // console.log(updateQuery)
@@ -805,7 +808,10 @@ async function updateProducts(results) {
             }
 
             db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                if (updateError) throw updateError;
+                if (updateError) {
+                    console.error('Error marcando producto borrado en updateProducts:', updateError);
+                    return;
+                }
                 console.log(`Elemento borrado número ${contador} actualizado con éxito: ${element.title}`);
             });
         }
@@ -881,7 +887,10 @@ async function checkSoldProducts(results) {
             updateQuery += ` WHERE id = ${element.id}`
 
             db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                if (updateError) throw updateError;
+                if (updateError) {
+                    console.error('Error actualizando producto en checkSoldProducts:', updateError);
+                    return;
+                }
                 console.log(`Elemento número ${contador} actualizado con éxito: ${element.title}`);
             });
         } catch (error) {
@@ -902,7 +911,10 @@ async function checkSoldProducts(results) {
             }
 
             db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                if (updateError) throw updateError;
+                if (updateError) {
+                    console.error('Error marcando producto borrado en checkSoldProducts:', updateError);
+                    return;
+                }
                 console.log(`Elemento número ${contador} borrado con éxito: ${element.title}`);
             });
         }
@@ -934,6 +946,10 @@ async function checkOldReserveds() {
     let vendidosBorrados = 0
 
     db.query(`SELECT * FROM products WHERE reserved_date > ${haceUnMes} AND article_status = 'reservado' ORDER BY reserved_date DESC`, async (error, results, fields) => {
+        if (error) {
+            console.error('Error en consulta de checkOldReserveds:', error);
+            return;
+        }
         try {
             for (const element of results) {
                 try {
@@ -956,7 +972,10 @@ async function checkOldReserveds() {
                     updateQuery += ` WHERE id = ${element.id}`
 
                     db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                        if (updateError) throw updateError;
+                        if (updateError) {
+                            console.error('Error actualizando producto en checkOldReserveds:', updateError);
+                            return;
+                        }
                         console.log(`Elemento número ${contador} actualizado con éxito: ${element.title}`);
                     });
                 } catch (error) {
@@ -974,7 +993,10 @@ async function checkOldReserveds() {
                     }
 
                     db.query(updateQuery, (updateError, updateResults, updateFields) => {
-                        if (updateError) throw updateError;
+                        if (updateError) {
+                            console.error('Error marcando producto borrado en checkOldReserveds:', updateError);
+                            return;
+                        }
                         console.log(`Elemento número ${contador} borrado con éxito: ${element.title}`);
                     });
                 }

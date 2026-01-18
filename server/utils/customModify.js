@@ -22,13 +22,19 @@ async function changeStates() {
   db.query(
     `SELECT * FROM products WHERE w_sub_category = 'Teléfonos móviles' ORDER BY reserved_date DESC`,
     (error, results, fields) => {
-      if (error) throw error;
+      if (error) {
+        console.error("Error en consulta de changeStates:", error);
+        return;
+      }
 
       // Recorrer c                                                                                                                                          elemento y modificar la columna "date_sold"
       results.forEach((element) => {
         const updateQuery = `UPDATE products SET w_sub_category = 'Smartphone' WHERE id = ${element.id}`;
         db.query(updateQuery, (updateError, updateResults, updateFields) => {
-          if (updateError) throw updateError;
+          if (updateError) {
+            console.error("Error actualizando producto en changeStates:", updateError);
+            return;
+          }
           console.log(`Elemento actualizado con éxito: ${element.id}`);
         });
         console.log(element.title);
