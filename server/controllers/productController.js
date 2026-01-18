@@ -524,6 +524,17 @@ exports.getProducts = async (req, res) => {
   }
 };
 
+exports.getProductsChart = async (req, res) => {
+  const filters = req.body; // Suponiendo que los filtros vienen en el body
+  try {
+    const products = await Product.getProductsChart(filters);
+    res.json(products);
+  } catch (error) {
+    console.error("Error al obtener los productos: ", error);
+    res.status(500).json({ error: "Error al obtener los productos" });
+  }
+};
+
 exports.getProductsSize = async (req, res) => {
   const filters = req.body; // Suponiendo que los filtros vienen en el body
   try {

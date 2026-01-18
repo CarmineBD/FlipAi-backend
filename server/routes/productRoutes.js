@@ -67,6 +67,8 @@ router.get("/data/osrs", productController.getOsrsPrices);
 
 router.post("/getProducts", productController.getProducts);
 
+router.post("/getProductsChart", productController.getProductsChart);
+
 router.post("/getProductsSize", productController.getProductsSize);
 
 router.get("/getProductDetails", productController.getProductDetails);

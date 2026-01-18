@@ -2052,6 +2052,315 @@ getProducts = (filters, getOnlySize = false) => {
   });
 };
 
+getProductsChart = (filters) => {
+  return new Promise((resolve, reject) => {
+    const {
+      order_by = "reservation_date_desc",
+      reserved_since,
+      categories = [],
+      states = [],
+      article_status = [],
+      price_range,
+      time_to_be_reserved,
+      distance_in_km,
+      allows_shipping,
+      sub_category_id,
+      brand_id,
+      product_type_id,
+      model_id,
+      color_id,
+      tags = [],
+      specs = [],
+      defects = [],
+      extras = [],
+      real_state,
+      manual_confirmed,
+      views,
+      favorites,
+      postal_codes = [],
+      search,
+      w_brand,
+      w_model,
+      w_sub_category,
+      w_sub_sub_category,
+      advanced_search,
+      reserved_date_range,
+    } = filters;
+
+    let whereClauses = [];
+
+    if (time_to_be_reserved) {
+      whereClauses.push(`p.time_to_sell <= ${time_to_be_reserved}`);
+    }
+
+    if (categories.length) {
+      whereClauses.push(`p.category_id IN (${categories.join(",")})`);
+    }
+
+    if (states.length) {
+      whereClauses.push(
+        `p.state IN (${states.map((state) => `'${state}'`).join(",")})`
+      );
+    }
+
+    if (article_status.length) {
+      whereClauses.push(
+        `p.article_status IN (${article_status
+          .map((status) => `'${status}'`)
+          .join(",")})`
+      );
+    }
+
+    if (price_range) {
+      if (price_range.min && price_range.max) {
+        whereClauses.push(
+          `p.price BETWEEN ${price_range.min} AND ${price_range.max}`
+        );
+      } else if (price_range.min) {
+        whereClauses.push(`p.price >= ${price_range.min}`);
+      } else if (price_range.max) {
+        whereClauses.push(`p.price <= ${price_range.max}`);
+      }
+    }
+
+    if (sub_category_id) {
+      whereClauses.push(`p.sub_category_id = ${sub_category_id}`);
+    }
+    if (brand_id) {
+      whereClauses.push(`brand_id = ${brand_id}`);
+    }
+    if (product_type_id) {
+      whereClauses.push(`product_type_id = ${product_type_id}`);
+    }
+    if (model_id) {
+      whereClauses.push(`model_id = ${model_id}`);
+    }
+    if (allows_shipping) {
+      whereClauses.push(`allows_shipping = ${allows_shipping}`);
+    }
+    if (color_id) {
+      whereClauses.push(`color_id = ${color_id}`);
+    }
+
+    if (distance_in_km) {
+      whereClauses.push(`p.distance <= ${distance_in_km}`);
+    }
+
+    if (real_state) {
+      whereClauses.push(`real_state = '${real_state}'`);
+    }
+
+    if (manual_confirmed) {
+      whereClauses.push(`manual_confirmed = '${manual_confirmed}'`);
+    }
+
+    if (w_brand) {
+      whereClauses.push(`w_brand = '${w_brand}'`);
+    }
+
+    if (w_model) {
+      whereClauses.push(`w_model = '${w_model}'`);
+    }
+
+    if (w_sub_category) {
+      whereClauses.push(`w_sub_category = '${w_sub_category}'`);
+    }
+
+    if (w_sub_sub_category) {
+      whereClauses.push(`w_sub_sub_category = '${w_sub_sub_category}'`);
+    }
+
+    // if (reserved_since) {
+    //   const now = Date.now(); // Obtener el tiempo actual en milisegundos
+    //   const reservedFrom = now - reserved_since; // Calcular la fecha limite
+    //   whereClauses.push(`p.reserved_date >= ${reservedFrom}`);
+    // }
+
+    if (!reserved_date_range) {
+      const now = Date.now();
+      const oneMonthAgo = now - 30 * 24 * 60 * 60 * 1000;
+      whereClauses.push(`p.reserved_date >= ${oneMonthAgo}`);
+      whereClauses.push(`p.reserved_date <= ${now}`);
+    } else {
+      let reservedDateFrom;
+      let reservedDateTo;
+
+      if (Array.isArray(reserved_date_range)) {
+        [reservedDateFrom, reservedDateTo] = reserved_date_range;
+      } else if (typeof reserved_date_range === "object") {
+        reservedDateFrom =
+          reserved_date_range.from ??
+          reserved_date_range.start ??
+          reserved_date_range.min;
+        reservedDateTo =
+          reserved_date_range.to ??
+          reserved_date_range.end ??
+          reserved_date_range.max;
+      }
+
+      const reservedDateFromValue = Number(reservedDateFrom);
+      const reservedDateToValue = Number(reservedDateTo);
+
+      if (Number.isFinite(reservedDateFromValue)) {
+        whereClauses.push(`p.reserved_date >= ${reservedDateFromValue}`);
+      }
+      if (Number.isFinite(reservedDateToValue)) {
+        whereClauses.push(`p.reserved_date <= ${reservedDateToValue}`);
+      }
+    }
+
+    if (postal_codes.length) {
+      whereClauses.push(
+        `p.postal_code IN (${postal_codes
+          .map((code) => `'${code}'`)
+          .join(",")})`
+      );
+    }
+
+    if (tags.length) {
+      tags.map((tag) =>
+        whereClauses.push(
+          `EXISTS (SELECT 1 FROM products_tags pt WHERE pt.product_id = p.id AND pt.tag_id IN (${tag})) `
+        )
+      );
+    }
+
+    if (specs.length) {
+      specs.map((spec) =>
+        whereClauses.push(
+          `EXISTS (SELECT 1 FROM products_specs pt WHERE pt.product_id = p.id AND pt.tag_id IN (${spec})) `
+        )
+      );
+    }
+
+    if (specs.defects) {
+      defects.map((defect) =>
+        whereClauses.push(
+          `EXISTS (SELECT 1 FROM products_defects pt WHERE pt.product_id = p.id AND pt.tag_id IN (${defect})) `
+        )
+      );
+    }
+
+    if (specs.extras) {
+      extras.map((extra) =>
+        whereClauses.push(
+          `EXISTS (SELECT 1 FROM products_extras pt WHERE pt.product_id = p.id AND pt.tag_id IN (${extra})) `
+        )
+      );
+    }
+
+    if (views) {
+      whereClauses.push(`p.views <= ${views}`);
+    }
+    if (favorites) {
+      whereClauses.push(`p.favorites <= ${favorites}`);
+    }
+    if (search) {
+      whereClauses.push(
+        `(p.title LIKE '%${search}%' OR p.description LIKE '%${search}%')`
+      );
+    }
+
+    if (advanced_search) {
+      const { fields, comparasionOperator, text, logicalOperator } =
+        advanced_search;
+      let advancedConditions = [];
+
+      if (comparasionOperator === "equals") {
+        if (fields === "title") {
+          advancedConditions.push(`p.title = '${text}'`);
+        } else if (fields === "description") {
+          advancedConditions.push(`p.description = '${text}'`);
+        } else if (
+          fields === "titleAndDescription" ||
+          fields === "title_and_description"
+        ) {
+          advancedConditions.push(
+            `(p.title = '${text}' OR p.description = '${text}')`
+          );
+        }
+      } else if (comparasionOperator === "contains" && Array.isArray(text)) {
+        if (fields === "title") {
+          const conditions = text.map((t) => `p.title LIKE '%${t}%'`);
+          advancedConditions.push(
+            `(${conditions.join(` ${logicalOperator} `)})`
+          );
+        } else if (fields === "description") {
+          const conditions = text.map((t) => `p.description LIKE '%${t}%'`);
+          advancedConditions.push(
+            `(${conditions.join(` ${logicalOperator} `)})`
+          );
+        } else if (
+          fields === "titleAndDescription" ||
+          fields === "title_and_description"
+        ) {
+          const conditions = text.map(
+            (t) => `(p.title LIKE '%${t}%' OR p.description LIKE '%${t}%')`
+          );
+          advancedConditions.push(
+            `(${conditions.join(` ${logicalOperator} `)})`
+          );
+        }
+      }
+
+      if (advancedConditions.length > 0) {
+        whereClauses.push(`(${advancedConditions.join(" AND ")})`);
+      }
+    }
+
+    let whereSQL = whereClauses.length
+      ? `WHERE ${whereClauses.join(" AND ")}`
+      : "";
+
+    let orderClause = `ORDER BY p.reserved_date DESC`;
+
+    if (order_by) {
+      switch (order_by) {
+        case "price_asc":
+          orderClause = `ORDER BY p.price ASC`;
+          break;
+        case "price_desc":
+          orderClause = `ORDER BY p.price DESC`;
+          break;
+        case "reservation_date_desc":
+          orderClause = `ORDER BY p.reserved_date DESC`;
+          break;
+        case "reservation_date_asc":
+          orderClause = `ORDER BY p.reserved_date ASC`;
+          break;
+        case "time_to_sell_asc":
+          orderClause = `ORDER BY p.time_to_sell ASC`;
+          break;
+        case "time_to_sell_desc":
+          orderClause = `ORDER BY p.time_to_sell DESC`;
+          break;
+        case "distance_asc":
+          orderClause = `ORDER BY p.distance ASC`;
+          break;
+        case "distance_desc":
+          orderClause = `ORDER BY p.distance DESC`;
+          break;
+      }
+    }
+
+    const dataQuery = `
+        SELECT p.id, p.price, p.reserved_date
+        FROM products p
+        ${whereSQL}
+        ${orderClause};
+      `;
+
+    db.query(dataQuery, (err, results) => {
+      if (err) {
+        console.error("Error en la consulta:", err);
+        reject(err);
+      } else {
+        resolve({ products: results });
+      }
+    });
+  });
+};
+
 getProductDetails = (id) => {
   return new Promise((resolve, reject) => {
     const dataQuery = `
@@ -2214,5 +2523,6 @@ module.exports = {
   getExtras,
   getEnumValuesOfColumn,
   getProducts,
+  getProductsChart,
   getProductDetails,
 };
