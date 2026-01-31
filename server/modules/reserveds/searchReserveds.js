@@ -182,6 +182,8 @@ function checkIfDataModelChanged(item) {
         console.log('El modelo de datos es consistente.');
     } catch (error) {
         console.error('⚠️ Cambio en el modelo de datos detectado:', error.message);
+        console.log("modelo de datos antiguo: ", expectedModel)
+        console.log("modelo de datos nuevo: ", item)
         throw error; // Lanza el error para detener el programa
     }
 }
